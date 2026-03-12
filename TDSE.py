@@ -6,11 +6,11 @@ from numba import jit
 import numba
 
 
-# Parameters: Taking L = 1 simplifies it a lot
+# Parameters: 
 
 xNum = 301
 tNum = 200000
-dt=1e-7
+dt=3e-8
 L = 1
 dx = L/(xNum - 1)
 
@@ -49,7 +49,6 @@ def vPot(x):
 mu = L/2
 sigma = mu * 0.1
 
-momentum = 0.0
 
 
 # Produces the initial wave
@@ -134,7 +133,7 @@ plt.show()
 wavePlt, = ax.plot(xVals, np.abs(result[0])**2)
 ax.plot(xVals, scaledV)
 
-skipFrames = 10
+skipFrames = 20
 
 def frame(i):
     waveVal = np.abs(result[i*skipFrames])**2
